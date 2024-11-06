@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90873512425",
+    "project_id": "labmate-e8ac0",
+    "storage_bucket": "labmate-e8ac0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90873512425:android:b22824d9e2c0f15eebcb78",
+        "android_client_info": {
+          "package_name": "com.example.labmate"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiCAdt6S1Ooi9JxGmtLC_P3RHc4TYV5TM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
