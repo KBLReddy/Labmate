@@ -1,5 +1,6 @@
 package com.example.labmate.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -19,7 +20,7 @@ import com.google.firebase.firestore.DocumentReference
 fun ExperimentsListScreen(
     modifier: Modifier = Modifier,
     experimentViewModel: ExperimentViewModel = viewModel(),
-    labRef: DocumentReference
+    labRef: DocumentReference,onClick: () -> Unit
 ) {
     LaunchedEffect(labRef) {
         experimentViewModel.fetchExperiments(labRef)
@@ -27,14 +28,14 @@ fun ExperimentsListScreen(
     val experiments = experimentViewModel.experiments.collectAsState()
     LazyColumn(modifier.fillMaxSize()) {
         items(experiments.value) { experiment ->
-            ItemExperimentsListScreen(word = experiment.experimentName)
+            ItemExperimentsListScreen(word = experiment.experimentName, onClick = {onClick()})
         }
     }
 }
 
 @Composable
-fun ItemExperimentsListScreen(modifier: Modifier = Modifier, word: String) {
+fun ItemExperimentsListScreen(modifier: Modifier = Modifier, word: String,onClick: ()-> Unit) {
     Column(modifier.padding(4.dp)) {
-        Text(text = word)
+        Text(text = word, modifier = Modifier.clickable{onClick()})
     }
 }

@@ -56,8 +56,13 @@ fun MainScreen(modifier: Modifier = Modifier) {
             composable(route = MainScreen.Experiments.name) {
                 val selectedLab = labsViewModel.selectedLab.collectAsState().value
                 selectedLab?.let {
-                    ExperimentsListScreen(labRef = it.refId)
+                    ExperimentsListScreen(labRef = it.refId, onClick = {
+                        navController.navigate(MainScreen.Experiment.name)
+                    })
                 }
+            }
+            composable(route = MainScreen.Experiment.name){
+                PdfViewerScreenFromFirebaseUrl()
             }
         }
     }
