@@ -19,8 +19,9 @@ import com.google.firebase.firestore.DocumentReference
 @Composable
 fun ExperimentsListScreen(
     modifier: Modifier = Modifier,
+    labsViewModel: LabsViewModel = viewModel(),
     experimentViewModel: ExperimentViewModel = viewModel(),
-    labRef: DocumentReference,onClick: () -> Unit
+    labRef: DocumentReference,onClick: (experiment: Experiment) -> Unit
 ) {
     LaunchedEffect(labRef) {
         experimentViewModel.fetchExperiments(labRef)
@@ -28,7 +29,7 @@ fun ExperimentsListScreen(
     val experiments = experimentViewModel.experiments.collectAsState()
     LazyColumn(modifier.fillMaxSize()) {
         items(experiments.value) { experiment ->
-            ItemExperimentsListScreen(word = experiment.experimentName, onClick = {onClick()})
+            ItemExperimentsListScreen(word = experiment.experimentName, onClick = {onClick(experiment)})
         }
     }
 }

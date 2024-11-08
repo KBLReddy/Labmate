@@ -3,6 +3,7 @@ package com.example.labmate.ui.screens
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.labmate.data.models.Experiment
 import com.example.labmate.data.models.Lab
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,6 +15,8 @@ class LabsViewModel : ViewModel() {
     private val _labs = MutableStateFlow<List<Lab>>(emptyList())
     val labs: StateFlow<List<Lab>> = _labs
     private val _selectedLab = MutableStateFlow<Lab?>(null)
+    private val _selectedExperiment = MutableStateFlow<Experiment?>(null)
+    val selectedExperiment: StateFlow<Experiment?> = _selectedExperiment
     val selectedLab: StateFlow<Lab?> = _selectedLab
     private val db = FirebaseFirestore.getInstance()
 
@@ -53,5 +56,8 @@ class LabsViewModel : ViewModel() {
 
     fun setSelectedLab(lab: Lab) {
         _selectedLab.value = lab
+    }
+    fun setSelectedExperiment(experiment: Experiment){
+        _selectedExperiment.value = experiment
     }
 }

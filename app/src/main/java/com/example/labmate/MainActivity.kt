@@ -14,20 +14,20 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.labmate.ui.screens.LabsListScreen
 import com.example.labmate.ui.screens.MainScreen
 import com.example.labmate.ui.theme.LabmateTheme
+import com.google.firebase.Firebase
 import com.google.firebase.FirebaseApp
-import com.google.firebase.appcheck.FirebaseAppCheck
+import com.google.firebase.appcheck.appCheck
 import com.google.firebase.appcheck.playintegrity.PlayIntegrityAppCheckProviderFactory
-
+import com.google.firebase.initialize
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        FirebaseApp.initializeApp(this)
-        val firebaseAppCheck = FirebaseAppCheck.getInstance()
-        firebaseAppCheck.installAppCheckProviderFactory(
-            PlayIntegrityAppCheckProviderFactory.getInstance()
+        Firebase.initialize(context = this)
+        Firebase.appCheck.installAppCheckProviderFactory(
+            PlayIntegrityAppCheckProviderFactory.getInstance(),
         )
+        super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
             LabmateTheme {
