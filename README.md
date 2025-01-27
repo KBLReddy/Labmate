@@ -13,14 +13,6 @@
 - **Firebase Integration**: The app uses Firebase Firestore for data storage and Firebase Storage for managing and serving PDF files.
 - **Clean Architecture**: Structured with Jetpack Compose for UI, ViewModel for lifecycle management, and modern Android libraries.
 
-## Screenshots
-
-<p align="center">
-    <img src="2.jpg" alt="Screenshot 2" width="250" style="margin: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-    <img src="3.jpg" alt="Screenshot 3" width="250" style="margin: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-    <img src="4.jpg" alt="Screenshot 4" width="250" style="margin: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-    <img src="5.jpg" alt="Screenshot 5" width="250" style="margin: 15px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-</p>
 
 
 
