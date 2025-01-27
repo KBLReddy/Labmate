@@ -15,13 +15,19 @@
 
 ## Screenshots
 
+## Screenshots
+
 <p align="center">
     <img src="1.jpg" alt="Screenshot 1" width="200" style="margin: 10px;">
     <img src="2.jpg" alt="Screenshot 2" width="200" style="margin: 10px;">
     <img src="3.jpg" alt="Screenshot 3" width="200" style="margin: 10px;">
+</p>
+
+<p align="center">
     <img src="4.jpg" alt="Screenshot 4" width="200" style="margin: 10px;">
     <img src="5.jpg" alt="Screenshot 5" width="200" style="margin: 10px;">
 </p>
+
 
 
 ## Technologies Used
